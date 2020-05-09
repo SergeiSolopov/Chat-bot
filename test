@@ -1,0 +1,27 @@
+import unittest
+import bot
+
+
+class ResultTest(unittest.TestCase):
+    def testAddition(self):
+        self.assertEqual(bot.Result("10.5+1.5"), 12.0)
+
+    def testSubstraction(self):
+        self.assertEqual(bot.Result("10.5-1.5"), 9.0)
+
+    def testMultiplication(self):
+        self.assertEqual(bot.Result("10.5*1.5"), 15.75)
+
+    def testDivision(self):
+        self.assertEqual(bot.Result("10.5/1.5"), 7.0)
+
+    def testZeroDivision(self):
+        self.assertEqual(bot.Result("10/0"), "Ошибка: деление на 0")
+
+    def testNegativeSubstraction(self):
+        self.assertEqual(bot.Result("-10.5--1.5"), -9.0)
+
+
+if __name__ == '__main__':
+
+    unittest.main()
